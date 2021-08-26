@@ -30,10 +30,8 @@ class _MyAppState extends State<MyApp> {
             primary: AppColors.white,
             onPrimary: AppColors.dark,
           padding: EdgeInsets.symmetric(vertical: Space.x4),
-          textStyle: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
+          textStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w600,),
+
           ),
 
         ),
@@ -65,9 +63,11 @@ class _MyAppState extends State<MyApp> {
                 borderSide: BorderSide(color: AppColors.grey)
             )
         ),
+        cardColor: AppColors.dark2,
+
       ),
 
-        initialRoute: AppRoutes.login,
+        initialRoute: AppRoutes.home,
        routes:{
        AppRoutes.signup: (context) => SignUpScreen(),
          AppRoutes.splash: (context) => SplashScreen(),
