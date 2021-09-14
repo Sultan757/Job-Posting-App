@@ -9,11 +9,12 @@ import 'package:gdg_flutter/screens/splash.dart';
 import 'package:gdg_flutter/utils/routes.dart';
 import 'package:gdg_flutter/utils/space.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'main.dart';
+
 
 
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+   MyApp({Key? key}) : super(key: key);
+  final navigatorKey = GlobalKey<NavigatorState>();
 
   @override
   _MyAppState createState() => _MyAppState();
@@ -23,6 +24,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: Theme.of(context).copyWith(
         scaffoldBackgroundColor: AppColors.dark,
         elevatedButtonTheme: ElevatedButtonThemeData(
@@ -35,7 +37,6 @@ class _MyAppState extends State<MyApp> {
           ),
 
         ),
-
 
     textTheme: GoogleFonts.poppinsTextTheme(TextTheme()).copyWith(
       bodyText1: TextStyle(
@@ -64,13 +65,13 @@ class _MyAppState extends State<MyApp> {
             )
         ),
         cardColor: AppColors.dark2,
-
+      
       ),
 
-        initialRoute: AppRoutes.home,
+        initialRoute: AppRoutes.splash,
        routes:{
-       AppRoutes.signup: (context) => SignUpScreen(),
          AppRoutes.splash: (context) => SplashScreen(),
+         AppRoutes.signup: (context) => SignUpScreen(),
          AppRoutes.home: (context) => HomeScreen(),
          AppRoutes.login: (context) => LoginScreen(),
       } ,
